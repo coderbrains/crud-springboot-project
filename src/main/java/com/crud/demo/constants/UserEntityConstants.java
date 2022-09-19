@@ -1,6 +1,6 @@
 package com.crud.demo.constants;
 
-public class UserValidation {
+public class UserEntityConstants {
 	public static final String USERNAME_REQUIRED = "User name is required.";
 	public static final String USERNAME_BINDSIZE = "Size of user name is between 8 to 20.";
 	public static final String USERNAME_PATTERN = "[a-zA-Z][a-zA-Z0-9]*";

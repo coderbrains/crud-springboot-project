@@ -12,7 +12,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import com.crud.demo.constants.UserValidation;
+import com.crud.demo.constants.UserEntityConstants;
 
 import lombok.Data;
 import lombok.ToString;
@@ -31,21 +31,21 @@ public class User implements Serializable {
 	private int id;
 
 	@Column(name = "userName", nullable = false, length = 20, unique = true)
-	@NotBlank(message = UserValidation.USERNAME_REQUIRED)
-	@Size(min = 10, max = 20, message = UserValidation.USERNAME_BINDSIZE)
-	@Pattern(regexp = UserValidation.USERNAME_PATTERN, message = UserValidation.PATTERN_MESSAGE)
+	@NotBlank(message = UserEntityConstants.USERNAME_REQUIRED)
+	@Size(min = 10, max = 20, message = UserEntityConstants.USERNAME_BINDSIZE)
+	@Pattern(regexp = UserEntityConstants.USERNAME_PATTERN, message = UserEntityConstants.PATTERN_MESSAGE)
 	private String userName;
 
 	@Column(name = "password", length = 20, nullable = false)
-	@NotBlank(message = UserValidation.PASSWORD_REQUIRED)
-	@Size(min = 8, max = 20, message = UserValidation.PASSWORD_BIND_SIZE)
-	@Pattern(regexp = UserValidation.PASSWORD_PATTERN, message = UserValidation.PASSWORD_PATTERN_MESSAGE)
+	@NotBlank(message = UserEntityConstants.PASSWORD_REQUIRED)
+	@Size(min = 8, max = 20, message = UserEntityConstants.PASSWORD_BIND_SIZE)
+	@Pattern(regexp = UserEntityConstants.PASSWORD_PATTERN, message = UserEntityConstants.PASSWORD_PATTERN_MESSAGE)
 	private String password;
 
 	@Column(name = "user_role", length = 10, nullable = false)
-	@NotBlank(message = UserValidation.ROLE_REQUIRED)
-	@Size(min = 5, max = 10, message = UserValidation.ROLE_SIZE_BIND)
-	@Pattern(regexp = UserValidation.ROLE_PATTERN, message = UserValidation.ROLE_PATTERN_MESSAGE)
+	@NotBlank(message = UserEntityConstants.ROLE_REQUIRED)
+	@Size(min = 5, max = 10, message = UserEntityConstants.ROLE_SIZE_BIND)
+	@Pattern(regexp = UserEntityConstants.ROLE_PATTERN, message = UserEntityConstants.ROLE_PATTERN_MESSAGE)
 	private String role;
 
 	@Column(name = "is_active")
