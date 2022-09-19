@@ -1,5 +1,6 @@
 package com.crud.demo.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,6 +14,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -33,7 +35,12 @@ import lombok.ToString;
 @Data
 @ToString
 @Table(name = StudentEntityConstant.TABLE_NAME)
-public class Student {
+public class Student implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(name = StudentEntityConstant.ID_NAME, nullable = false)
@@ -57,6 +64,9 @@ public class Student {
 	@Size(min = 10, max = 20, message = StudentEntityConstant.ROLL_BIND_SIZE)
 	@Pattern(regexp = StudentEntityConstant.ROLL_PATTERN, message = StudentEntityConstant.ROLL_PATTER_MESSAGE)
 	private String rollNo;
+
+	@ManyToOne
+	private Course courses;
 
 	@Column(name = StudentEntityConstant.EMAIL, unique = true, length = 50)
 	@Email(message = StudentEntityConstant.EMAIL_VALID)
