@@ -13,5 +13,6 @@ public class UserEntityConstants {
 	public static final String ROLE_SIZE_BIND = "Role should be in between 5 to 10";
 	public static final String ROLE_PATTERN_MESSAGE = "Role can only contain the alphbets.";
 	public static final String ROLE_PATTERN = "[a-zA-Z]*";
+	public static final String CONTROLLER_URL = "/user";
 
 }

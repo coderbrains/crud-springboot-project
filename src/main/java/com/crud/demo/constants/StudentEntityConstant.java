@@ -34,5 +34,6 @@ public class StudentEntityConstant {
 	public static final String REGEXP = "(0|91)?[6-9][0-9]{9}";
 	public static final String MOBILE_NUMBER_PATTERN = "Mobile number should follow the pattern.";
 	public static final String NICK_NAME = "Nick_name";
+	public static final String CONTROLLER_URL = "/student";
 
 }

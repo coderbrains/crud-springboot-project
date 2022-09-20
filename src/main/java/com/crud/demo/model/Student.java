@@ -37,9 +37,6 @@ import lombok.ToString;
 @Table(name = StudentEntityConstant.TABLE_NAME)
 public class Student implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
